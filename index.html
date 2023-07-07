@@ -1,93 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Intel Core i9-13900KS</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="logolinux.png/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="logolinux.png/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="logolinux.png/favicon-16x16.png">
-  <link rel="manifest" href="logolinux.png/site.webmanifest">
-  <link rel="mask-icon" href="logolinux.png/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="logolinux.png/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="logolinux.png/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
-  <style>
-    body {
-      background-color: #292929;
-      color: #f1f1f1;
-      font-family: monospace;
-      padding: 20px;
-    }
+  <title>Website</title>
+  <script>
+    var userAgent = navigator.userAgent.toLowerCase();
 
-    #navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
+    if (/mobile|android|iphone|ipad|iemobile|wpdesktop/i.test(userAgent)) {
+      window.location.href = "indexmobile.html"; // Redirect to mobile version
+    } else {
+      window.location.href = "indexdesktop.html"; // Redirect to desktop version
     }
-
-    #navbar img {
-      height: 40px;
-      width: auto;
-    }
-
-    #navbar .links {
-      display: flex;
-    }
-
-    #navbar .links a {
-      color: #f1f1f1;
-      text-decoration: none;
-      margin-left: 10px;
-    }
-
-    /* New styles for the directory-like links */
-    #bottom-navbar {
-      background-color: #292929;
-      padding: 10px 0;
-      text-align: left;
-    }
-
-    #bottom-navbar .links {
-      font-family: monospace;
-      padding-left: 20px;
-      line-height: 1.5;
-    }
-
-    #bottom-navbar .links a {
-      color: #f1f1f1;
-      text-decoration: none;
-      display: block;
-    }
-
-    /* Upscale for mobile user agent */
-    @media only screen and (max-width: 600px) {
-      body {
-        transform: scale(1.25);
-        transform-origin: 0 0;
-        width: 80%;
-        margin: 0 auto;
-      }
-    }
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Font Awesome library -->
+  </script>
 </head>
 <body>
-  <div id="navbar">
-    <a href="https://github.com/TukangM" target="_blank"><i class="fab fa-github fa-2x" style="color: #F1F1F1;"></i></a> <!-- GitHub Icon and Link -->
-    <div class="links">
-      <a href="http://example.com">Example Link 1</a>
-      <a href="http://example.com">Example Link 2</a>
-    </div>
-  </div>
-
-  <!-- ... Existing HTML code ... -->
-
-  <div id="bottom-navbar">
-    <div class="links">
-      <a href="http://example.com">My IDK</a>
-      <a href="http://example.com">My Example</a>
-    </div>
-  </div>
+  <!-- This content will not be visible as the redirection happens automatically -->
 </body>
 </html>
