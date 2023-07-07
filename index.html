@@ -11,60 +11,17 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-config" content="logolinux.png/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
-  <style>
-    body {
-      background-color: #292929;
-      color: #f1f1f1;
-      font-family: monospace;
-      padding: 20px;
-    }
-
-    #navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    #navbar img {
-      height: 40px;
-      width: auto;
-    }
-
-    #navbar .links {
-      display: flex;
-    }
-
-    #navbar .links a {
-      color: #f1f1f1;
-      text-decoration: none;
-      margin-left: 10px;
-    }
-
-    /* New styles for the directory-like links */
-    #bottom-navbar {
-      background-color: #292929;
-      padding: 10px 0;
-      text-align: left;
-    }
-
-    #bottom-navbar .links {
-      font-family: monospace;
-      padding-left: 20px;
-      line-height: 1.5;
-    }
-
-    #bottom-navbar .links a {
-      color: #f1f1f1;
-      text-decoration: none;
-      display: block;
-    }
-  </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Font Awesome library -->
+
+  <!-- Load separate CSS file for mobile user agents -->
+  <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 600px)">
+
+  <!-- Load separate CSS file for desktop or PC user agents -->
+  <link rel="stylesheet" href="desktop.css" media="only screen and (min-width: 601px)">
 </head>
 <body>
   <div id="navbar">
-    <a href="https://github.com/TukangM" target="_blank"><i class="fab fa-github fa-2x" style="color: #f1f1f1;"></i></a> <!-- GitHub Icon and Link -->
+    <a href="https://github.com/TukangM" target="_blank"><i class="fab fa-github fa-2x"></i></a> <!-- GitHub Icon and Link -->
     <div class="links">
       <a href="http://example.com">Example Link 1</a>
       <a href="http://example.com">Example Link 2</a>
