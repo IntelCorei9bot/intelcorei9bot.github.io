@@ -3,22 +3,85 @@
 <head>
   <title>Real-Time Output</title>
   <style>
-    /* CSS styles omitted for brevity */
+    body {
+      background-color: #292929;
+      color: #f1f1f1;
+      font-family: monospace;
+      padding: 20px;
+    }
 
-    /* ... Existing CSS code ... */
+    #navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
 
+    #navbar img {
+      height: 40px;
+      width: auto;
+    }
+
+    #navbar .links {
+      display: flex;
+    }
+
+    #navbar .links a {
+      color: #f1f1f1;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    #terminal {
+      position: relative;
+      background-color: #000;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      overflow-y: scroll;
+      height: 400px;
+      margin-bottom: 20px;
+    }
+
+    #terminal::before {
+      content: "Terminal - Linux";
+      position: absolute;
+      top: -20px;
+      left: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    #terminal pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: #f1f1f1;
+    }
+
+    .cmd {
+      color: #8ae234; /* Green */
+    }
+
+    .error {
+      color: #ef2929; /* Red */
+    }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Font Awesome library -->
 </head>
 <body>
   <div id="navbar">
-    <!-- ... Existing HTML code ... -->
+    <a href="https://github.com/TukangM" target="_blank"><i class="fab fa-github fa-2x" style="color: #f1f1f1;"></i></a> <!-- GitHub Icon and Link -->
+    <div class="links">
+      <a href="http://example.com">Example Link 1</a>
+      <a href="http://example.com">Example Link 2</a>
+    </div>
   </div>
   <div id="terminal">
     <pre id="output"></pre>
   </div>
   <div>
-    <!-- ... Existing HTML code ... -->
+    <iframe height="80px" width="300px" frameborder="0" src="https://livecounts.io/embed/youtube-live-subscriber-counter/UCldeWv7E4nseH3nRNyfw7-A" style="border: 0; width:300px; height:80px;"></iframe>
   </div>
   <script>
     function formatOutput(log) {
@@ -48,24 +111,6 @@
       const terminal = document.getElementById('terminal');
       terminal.scrollTop = terminal.scrollHeight;
     }
-
-    // WebSocket connection
-    var socket = new WebSocket("ws://tukangm-fantastic-lamp-rvv4vjxjr5wcwpr6-8080.preview.app.github.dev"); // Replace with your WebSocket server URL
-
-    socket.onopen = function(event) {
-      console.log("WebSocket connection established.");
-    };
-
-    socket.onmessage = function(event) {
-      var message = event.data;
-      var outputPre = document.getElementById('output');
-      outputPre.innerHTML += formatOutput(message);
-      pageScroll(); // Call the pageScroll function for scrolling
-    };
-
-    socket.onclose = function(event) {
-      console.log("WebSocket connection closed.");
-    };
 
     getConsoleLog();
   </script>
