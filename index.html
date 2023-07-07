@@ -1,1 +1,73 @@
-kcak
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Real-Time Output</title>
+  <style>
+    /* CSS styles omitted for brevity */
+
+    /* ... Existing CSS code ... */
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Font Awesome library -->
+</head>
+<body>
+  <div id="navbar">
+    <!-- ... Existing HTML code ... -->
+  </div>
+  <div id="terminal">
+    <pre id="output"></pre>
+  </div>
+  <div>
+    <!-- ... Existing HTML code ... -->
+  </div>
+  <script>
+    function formatOutput(log) {
+      // Replace ANSI escape codes with appropriate CSS styles
+      log = log.replace(/\u001b\[1;31m~\u001b\[1;37m>\s\u001b\[1;32m CMD \u001b\[1;37m]/g, '<span class="cmd">~&gt; [ CMD ]</span>');
+      log = log.replace(/\u001b\[1;31m(.+?)\u001b\[0m/g, '<span class="error">$1</span>');
+      log = log.replace(/\u001b\[1;32m CMD \u001b\[1;37m]/g, '<span class="cmd">[ CMD ]</span>');
+
+      return log;
+    }
+
+    function getConsoleLog() {
+      fetch('console.log')
+        .then(response => response.text())
+        .then(log => {
+          const outputPre = document.getElementById('output');
+          outputPre.innerHTML = formatOutput(log);
+          pageScroll(); // Call the pageScroll function for scrolling
+        })
+        .catch(error => console.error(error))
+        .finally(() => {
+          setTimeout(getConsoleLog, 2000); // Fetch log every 2 seconds
+        });
+    }
+
+    function pageScroll() {
+      const terminal = document.getElementById('terminal');
+      terminal.scrollTop = terminal.scrollHeight;
+    }
+
+    // WebSocket connection
+    var socket = new WebSocket("ws://tukangm-fantastic-lamp-rvv4vjxjr5wcwpr6-8080.preview.app.github.dev"); // Replace with your WebSocket server URL
+
+    socket.onopen = function(event) {
+      console.log("WebSocket connection established.");
+    };
+
+    socket.onmessage = function(event) {
+      var message = event.data;
+      var outputPre = document.getElementById('output');
+      outputPre.innerHTML += formatOutput(message);
+      pageScroll(); // Call the pageScroll function for scrolling
+    };
+
+    socket.onclose = function(event) {
+      console.log("WebSocket connection closed.");
+    };
+
+    getConsoleLog();
+  </script>
+</body>
+</html>
