@@ -11,8 +11,73 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-config" content="logolinux.png/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" href="desktop.css" media="(min-width: 601px)">
-  <link rel="stylesheet" href="mobile.css" media="(max-width: 600px)">
+  <style>
+    body {
+      background-color: #292929;
+      color: #f1f1f1;
+      font-family: monospace;
+      padding: 20px;
+    }
+
+    #navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    #navbar img {
+      height: 40px;
+      width: auto;
+    }
+
+    #navbar .links {
+      display: flex;
+    }
+
+    #navbar .links a {
+      color: #f1f1f1;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    /* New styles for the directory-like links */
+    #bottom-navbar {
+      background-color: #292929;
+      padding: 10px 0;
+      text-align: left;
+    }
+
+    #bottom-navbar .links {
+      font-family: monospace;
+      padding-left: 20px;
+      line-height: 1.5;
+    }
+
+    #bottom-navbar .links a {
+      color: #f1f1f1;
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Upscale for mobile user agent */
+    @media only screen and (max-width: 600px) {
+      body {
+        transform: scale(1.25);
+        transform-origin: 0 0;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      #navbar {
+        margin-bottom: 10px;
+      }
+
+      #navbar img {
+        height: 30px;
+      }
+    }
+  </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Font Awesome library -->
 </head>
 <body>
