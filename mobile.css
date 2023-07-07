@@ -1,0 +1,5 @@
+body {
+  /* Add your mobile styles here */
+  /* The styles with upscale transformation */
+  transform: scale(1.25);
+}
