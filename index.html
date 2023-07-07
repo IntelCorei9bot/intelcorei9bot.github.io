@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Intel Core i9-13900KS</title>
+  <title>Index of /</title>
   <link rel="apple-touch-icon" sizes="180x180" href="logolinux.png/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="logolinux.png/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="logolinux.png/favicon-16x16.png">
@@ -45,34 +45,23 @@
     #bottom-navbar {
       background-color: #292929;
       padding: 10px 0;
-      text-align: center;
+      text-align: left;
     }
 
     #bottom-navbar .links {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      font-family: monospace;
+      padding-left: 20px;
+      line-height: 1.5;
     }
 
     #bottom-navbar .links a {
       color: #f1f1f1;
       text-decoration: none;
-      margin: 5px 0;
-      display: flex;
-      align-items: center;
-    }
-
-    #bottom-navbar .links a span {
-      margin-left: 10px;
     }
 
     #bottom-navbar .links a:before {
-      content: "";
-      display: inline-block;
-      width: 10px;
-      height: 1px;
-      background-color: #f1f1f1;
-      margin-right: 10px;
+      content: "[DIR]\t";
+      color: #8ae234;
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Font Awesome library -->
@@ -90,9 +79,7 @@
 
   <div id="bottom-navbar">
     <div class="links">
-      <a href="https://github.com/TukangM"><span><i class="fas fa-folder"></i> /My Github Profile</span></a>
-      <a href="http://example.com"><span><i class="fas fa-folder"></i> /My idk</span></a>
-      <a href="http://example.com"><span><i class="fas fa-folder"></i> /My Example</span></a>
+      [ICO]\t<a href="ubuntu/">Name</a>\tLast modified\tSize
     </div>
   </div>
 </body>
