@@ -3,14 +3,40 @@
 <head>
   <title>Real-Time Output</title>
   <style>
-    /* CSS styles omitted for brevity */
+    body {
+      background-color: #292929;
+      color: #f1f1f1;
+      font-family: monospace;
+      padding: 20px;
+    }
 
-    /* ... Existing CSS code ... */
-
-    #bottom-navbar {
+    #navbar {
       display: flex;
-      justify-content: center;
-      margin-top: 20px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    #navbar img {
+      height: 40px;
+      width: auto;
+    }
+
+    #navbar .links {
+      display: flex;
+    }
+
+    #navbar .links a {
+      color: #f1f1f1;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    /* New styles for the bottom navbar */
+    #bottom-navbar {
+      background-color: #292929;
+      padding: 10px 0;
+      text-align: center;
     }
 
     #bottom-navbar .links a {
